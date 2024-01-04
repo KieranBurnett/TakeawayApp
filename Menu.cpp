@@ -55,15 +55,15 @@ void Menu::load(string F) {
 		}
 		
 		if (obj[0] == "a") { // appetiser
-			Item *A = new Appetiser(obj);
+			Appetiser *A = new Appetiser(obj);
 			Items.push_back(A);
 		}
 		else if (obj[0] == "m") { // main course
-			Item *M = new MainCourse(obj);
+			MainCourse *M = new MainCourse(obj);
 			Items.push_back(M);
 		}
 		else if (obj[0] == "b") { // beverage
-			Item *B = new Beverage(obj);
+			Beverage *B = new Beverage(obj);
 			Items.push_back(B);
 		}
 	}

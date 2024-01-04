@@ -60,8 +60,7 @@ int main()
 		}
 		else if (command.compare("add") == 0) {
 			int digit = stoi(parameters[1]); // string Name, double Price, int Calories, string Shareable, string Tfo, string Type 
-			
-			Item *choice = menu.Items[digit-1]; // you need to instantiate this using the menu object!
+			Item* choice = menu.Items[digit-1]; // you need to instantiate this using the menu object!
 			order.add(choice);
 
 			// You may also wish to implement the ability to add multiple items at once!
@@ -69,7 +68,7 @@ int main()
 		}
 		else if (command.compare("remove") == 0)
 		{
-			order.remove(stoi(parameters[1]));
+			order.remove(stoi(parameters[1])-1);
 		}
 		else if (command.compare("checkout") == 0)
 		{
