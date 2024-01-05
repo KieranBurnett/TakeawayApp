@@ -11,13 +11,15 @@ Order::Order() {}
 Order::~Order() {}
 
 void Order::calculateTotal() { 
-	for (auto obj : Items) {
+
+	/*
+	for (unique_ptr<Item> obj : Items) {
 		total += obj->getPrice();
 		if (obj->getType() == "a") {
 			obj->toString();
 			// 2-4-1
 		}
-	}
+	}*/
 
 	vector<Item*> tfo_items;
 	savings = 0;
@@ -27,7 +29,7 @@ string Order::toString() { calculateTotal(); return to_string(total); }
 
 void Order::add(Item* choice) { 
 	cout << "Added: " << choice->getName() <<  " for $" << choice->getPrice() << " to your order.. " << endl;
-	Items.push_back(choice);
+	// Items.push_back(choice);
 }
 
 void Order::remove(int position) { 

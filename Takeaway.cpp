@@ -23,6 +23,7 @@ Good luck!
 #include <iostream>
 #include <vector>
 #include <cstring>
+//#include <memory>
 
 using namespace std;
 
@@ -60,8 +61,11 @@ int main()
 		}
 		else if (command.compare("add") == 0) {
 			int digit = stoi(parameters[1]); // string Name, double Price, int Calories, string Shareable, string Tfo, string Type 
-			Item* choice = menu.Items[digit-1]; // you need to instantiate this using the menu object!
-			order.add(choice);
+			if (menu.Items[digit - 1]->getType() == "a") {
+				cout << "Appetiser" << endl;
+			}
+			//unique_ptr<Item> choice = menu.Items[0].release(); // you need to instantiate this using the menu object!
+			//order.add(choice);
 
 			// You may also wish to implement the ability to add multiple items at once!
 			// e.g. add 1 5 9 

@@ -1,13 +1,14 @@
 #pragma once
-#include <vector>
 #include "Item.h"
+#include <vector>
+#include <memory>
 
 using namespace std;
 
 class ItemList // abstract
 {
 public:
-	vector<Item*> Items;
+	vector<unique_ptr<Item>> Items;
 	virtual string toString() = 0;
 };
 

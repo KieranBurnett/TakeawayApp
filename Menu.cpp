@@ -55,16 +55,16 @@ void Menu::load(string F) {
 		}
 		
 		if (obj[0] == "a") { // appetiser
-			Appetiser *A = new Appetiser(obj);
-			Items.push_back(A);
+			unique_ptr<Appetiser> A(new Appetiser(obj));
+			Items.push_back(move(A));
 		}
 		else if (obj[0] == "m") { // main course
-			MainCourse *M = new MainCourse(obj);
-			Items.push_back(M);
+			unique_ptr<MainCourse> A(new MainCourse(obj));
+			Items.push_back(move(A));
 		}
 		else if (obj[0] == "b") { // beverage
-			Beverage *B = new Beverage(obj);
-			Items.push_back(B);
+			unique_ptr<Beverage> A(new Beverage(obj));
+			Items.push_back(move(A));
 		}
 	}
 	cout << "Menu loaded successfully" << endl;
