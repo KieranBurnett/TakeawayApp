@@ -60,6 +60,8 @@ int main()
 		}
 		else if (command.compare("add") == 0) {
 			int digit = stoi(parameters[1]); // string Name, double Price, int Calories, string Shareable, string Tfo, string Type 
+			if (menu.Items[digit-1]->getType() == "a") {}
+			
 			Item* choice = menu.Items[digit-1]; // you need to instantiate this using the menu object!
 			order.add(choice);
 
