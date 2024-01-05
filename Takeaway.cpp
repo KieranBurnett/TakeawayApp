@@ -60,10 +60,20 @@ int main()
 		}
 		else if (command.compare("add") == 0) {
 			int digit = stoi(parameters[1]); // string Name, double Price, int Calories, string Shareable, string Tfo, string Type 
-			if (menu.Items[digit-1]->getType() == "a") {}
+			if (menu.Items[digit-1]->getType() == "a") {
+				Appetiser* choice = dynamic_cast<Appetiser*>(menu.Items[1]);
+				order.add(choice);
+			}
+			else if (menu.Items[digit - 1]->getType() == "m") {
+				Appetiser* choice = dynamic_cast<Appetiser*>(menu.Items[1]);
+				order.add(choice);
+			}
+			else if (menu.Items[digit - 1]->getType() == "b") {
+				Appetiser* choice = dynamic_cast<Appetiser*>(menu.Items[1]);
+				order.add(choice);
+			}
+
 			
-			Item* choice = menu.Items[digit-1]; // you need to instantiate this using the menu object!
-			order.add(choice);
 
 			// You may also wish to implement the ability to add multiple items at once!
 			// e.g. add 1 5 9 

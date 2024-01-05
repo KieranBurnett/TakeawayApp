@@ -13,6 +13,9 @@ public:
 	string printReceipt();
 	string toString();
 
+	void add(Appetiser* choice);
+
+
 	void add(Item* Choice);
 	void remove(int position);
 	

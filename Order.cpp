@@ -25,7 +25,7 @@ void Order::calculateTotal() {
 string Order::printReceipt() { return ""; }
 string Order::toString() { calculateTotal(); return to_string(total); }
 
-void Order::add(Item* choice) { 
+void Order::add(Appetiser* choice) { 
 	cout << "Added: " << choice->getName() <<  " for $" << choice->getPrice() << " to your order.. " << endl;
 	Items.push_back(choice);
 }
