@@ -60,20 +60,8 @@ int main()
 		}
 		else if (command.compare("add") == 0) {
 			int digit = stoi(parameters[1]); // string Name, double Price, int Calories, string Shareable, string Tfo, string Type 
-			if (menu.Items[digit-1]->getType() == "a") {
-				Appetiser* choice = dynamic_cast<Appetiser*>(menu.Items[1]);
-				order.add(choice);
-			}
-			else if (menu.Items[digit - 1]->getType() == "m") {
-				Appetiser* choice = dynamic_cast<Appetiser*>(menu.Items[1]);
-				order.add(choice);
-			}
-			else if (menu.Items[digit - 1]->getType() == "b") {
-				Appetiser* choice = dynamic_cast<Appetiser*>(menu.Items[1]);
-				order.add(choice);
-			}
-
-			
+			Item* choice = menu.Items[digit-1];
+			order.add(choice);
 
 			// You may also wish to implement the ability to add multiple items at once!
 			// e.g. add 1 5 9 
@@ -84,7 +72,14 @@ int main()
 		}
 		else if (command.compare("checkout") == 0)
 		{
-			cout << order.toString(); // display the items in order, total price and savings made
+			cout << order.toString() << endl; // display the items in order, total price and savings made
+			cout << "Type 'yes' to confirm your order.. " << endl;
+			string inp;
+			cin >> inp;
+			if (inp == "yes") { 
+			order.printReceipt(); 
+			exit(1);
+			}
 		}
 		else if (command.compare("help") == 0)
 		{

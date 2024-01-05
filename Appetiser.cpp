@@ -16,9 +16,10 @@ Appetiser::Appetiser( vector<string> obj) {
 Appetiser::~Appetiser() {}
 
 string Appetiser::toString() { 
-	if (this->getShareable()) { return((this->getName()+ ": $" + to_string(this->getPrice()) + ", " + to_string(this->getCalories()) + " cal (shareable)")); }
-	else if (this->gettwoForOne()) { return((this->getName() + ": $" + to_string(this->getPrice()) + ", " + to_string(this->getCalories()) + " cal (2-4-1)")); }
-	else { return((this->getName() + ": $" + to_string(this->getPrice()) + ", " + to_string(this->getCalories()) + " cal")); }
+	string app = (this->getName() + ": $" + to_string(this->getPrice()) + ", " + to_string(this->getCalories()) + " cal");
+	if (this->getShareable()) { app = app + " (Shareable)"; }
+	if (this->gettwoForOne()) { app = app + " (2-4-1)"; }
+	return(app);
 }
 
 bool Appetiser::getShareable() { return shareable; }

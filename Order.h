@@ -3,21 +3,16 @@
 class Order : public ItemList
 {
 private:
-	double total = 0.00;
-	double savings = 0.00;
+	double total;
+	double savings;
 public:
 	Order();
 	~Order();
 
 	void calculateTotal();
-	string printReceipt();
+	void printReceipt();
 	string toString();
-
-	void add(Appetiser* choice);
-
 
 	void add(Item* Choice);
 	void remove(int position);
-	
-	int getTotal();
 };
