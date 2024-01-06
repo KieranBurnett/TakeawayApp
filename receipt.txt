@@ -1,0 +1,11 @@
+
+	|Checkout|
+1|Garlic bread: $3.990000, 500 cal (2-4-1)
+2|Nachos: $4.990000, 600 cal (Shareable)
+3|Buffalo wings: $3.990000, 450 cal (2-4-1)
+4|Burger: $9.990000, 950 cal
+5|Burger: $9.990000, 950 cal
+
+	2-4-1 Discount(s) applied!
+Savings: $3.990000
+Total: £28.960000

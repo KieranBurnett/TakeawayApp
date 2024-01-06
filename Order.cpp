@@ -63,8 +63,9 @@ string Order::toString() {
 			str = str + "\n" + to_string(i+1) + "|" + object->toString();
 		}
 	}
+	str = str + "\n";
 	if (savings > 0.00) { str = str + "\n\t2-4-1 Discount(s) applied!"; }
-	str = str + "\nSavings: £" + to_string(savings) + "\nTotal: £" + to_string(total);
+	str = str + "\nSavings: $" + to_string(savings) + "\nTotal: £" + to_string(total);
 	return(str);
 }
 

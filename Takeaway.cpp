@@ -23,6 +23,7 @@ Good luck!
 #include <iostream>
 #include <vector>
 #include <cstring>
+#include <typeinfo>
 
 using namespace std;
 
@@ -36,6 +37,9 @@ int main()
 
 	// Create an order object
 	Order order = Order();
+
+	cout << "Welcome to the takeaway ordering system!" << endl;
+	cout << "Type 'help' for a list of commands" << endl;
 	while (userCommand != "exit")
 	{
 		cout << "\nWaiting on command.. " << endl;
@@ -46,7 +50,7 @@ int main()
 
 		char* token;
 		token = strtok(cstr, " "); // takes first word of input
-
+		
 		while (token != NULL)
 		{
 			parameters.push_back(token);
@@ -59,17 +63,28 @@ int main()
 			cout << menu.toString(); // output menu
 		}
 		else if (command.compare("add") == 0) {
-			int digit = stoi(parameters[1]); // string Name, double Price, int Calories, string Shareable, string Tfo, string Type 
-			Item* choice = menu.Items[digit-1];
-			order.add(choice);
 
-			// You may also wish to implement the ability to add multiple items at once!
-			// e.g. add 1 5 9 
+			for (int i = 1; i < parameters.size(); i++) { // allows for e.g. add 1 5 7
+				try {
+					Item* choice = menu.Items[stoi(parameters[i]) - 1];
+					order.add(choice);
+				}
+				catch (exception e) { break; }
+			}
 		}
+
 		else if (command.compare("remove") == 0)
 		{
-			order.remove(stoi(parameters[1])-1);
+			if (order.Items.size() == 0) { cout << "Your order is empty.. " << endl; }
+			else if (stoi(parameters[1]) > order.Items.size()) { cout << "Item not found.. " << endl; }
+			else {
+				try {
+					order.remove(stoi(parameters[1]) - 1);
+				}
+				catch (exception e) { cout << "Item not found.. " << endl; }
+			}
 		}
+
 		else if (command.compare("checkout") == 0)
 		{
 			cout << order.toString() << endl; // display the items in order, total price and savings made
@@ -81,6 +96,7 @@ int main()
 			exit(1);
 			}
 		}
+
 		else if (command.compare("help") == 0)
 		{
 			cout << "\n  [HELP]" << endl;
