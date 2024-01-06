@@ -73,7 +73,7 @@ int main()
 		else if (command.compare("checkout") == 0)
 		{
 			cout << order.toString() << endl; // display the items in order, total price and savings made
-			cout << "Type 'yes' to confirm your order.. " << endl;
+			cout << "\nType 'yes' to confirm your order.. " << endl;
 			string inp;
 			cin >> inp;
 			if (inp == "yes") { 

@@ -4,6 +4,7 @@
 #include "Beverage.h"
 
 #include <iostream>
+#include <fstream>
 #include <vector>
 #include <algorithm> 
 #include <cstdlib>
@@ -31,7 +32,6 @@ void Order::calculateTotal() {
 		if (length % 2 != 0) { tfo_prices.pop_back(); length = length - 1; } // makes it and even amount, most expensive is unnecessary, doesnt change anything
 		for (int i = 0; i < length / 2; i++) { tfo_prices.pop_back(); }
 		for (double price : tfo_prices) {
-			cout << price << endl;
 			new_savings += price;
 		}
 		new_total-=new_savings;
@@ -41,7 +41,11 @@ void Order::calculateTotal() {
 	savings = new_savings;
 }
 
-void Order::printReceipt() { } // writes toString() to a file, receipt.txt
+void Order::printReceipt() { // writes toString() to a file, receipt.txt
+	ofstream File("receipt.txt");
+	File << toString();
+	File.close();
+} 
 string Order::toString() {
 	calculateTotal();
 	string str = "\n\t|Checkout|";

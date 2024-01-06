@@ -67,4 +67,7 @@
     <None Include="menu.csv" />
     <None Include="menu2.csv" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="receipt.txt" />
+  </ItemGroup>
 </Project>
