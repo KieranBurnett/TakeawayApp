@@ -5,7 +5,7 @@
 Item::Item() {}
 Item::~Item() {}
 string Item::toString() { 
-	return((getName() + ": $"+ to_string(getPrice()) + ", " + to_string(getCalories()) + " cal")); 
+	return((getName() + ": £"+ to_string(getPrice()) + ", " + to_string(getCalories()) + " cal")); 
 }
 
 string Item::getType() { return type; }

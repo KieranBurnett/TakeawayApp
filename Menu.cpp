@@ -70,26 +70,3 @@ void Menu::load(string F) {
 	cout << "Menu loaded successfully" << endl;
 	File.close();
 }
-/*
-int pos = 0;
-string token;
-while ((pos = line.find(",")) != string::npos) {
-	token = line.substr(0, pos);
-	if (token == "") { // if the token is empty, skip it
-		cout << "empty token" << endl;
-		obj.push_back("empty");
-		line.erase(0, pos + 1);
-		continue;
-	}
-	obj.push_back(token);
-	line.erase(0, pos + 1);
-}*/
-
-/*
-char* cstr = new char[line.length() + 1];
-strcpy(cstr, line.c_str());
-for (int i = 0; i < 8; i++) {
-	char* token;
-	token = strtok(cstr, ","); // gets each section of the csv line and adds it to the array
-	obj.push_back(token);
-}*/

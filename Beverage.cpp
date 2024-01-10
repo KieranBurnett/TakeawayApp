@@ -17,7 +17,7 @@ bool Beverage::isAlcoholic() {
 	else { return false; }
 }
 string Beverage::toString() { 
-	return(getName()+ ": $"+ to_string(getPrice())+ ", " + to_string(getCalories()) + " cal (" + to_string(getVolume()) + ", " + to_string(getAbv()) + "% abv)");
+	return(getName()+ ": £"+ to_string(getPrice())+ ", " + to_string(getCalories()) + " cal (" + to_string(getVolume()) + ", " + to_string(getAbv()) + "% abv)");
 }
 
 int Beverage::getVolume() { return volume; }
